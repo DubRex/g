@@ -1,26 +1,9 @@
-<!DOCTYPE html>
 <html>
-<head>
 
+<h3>Mouse Positions Example</h3>
+<body style="background-color:lightblue;">
 
-<style>
-html, body {
-    max-width: 100%;
-    overflow-y: hidden;
-	overflow-x: hidden;
-
-}
-</style>
-
-
-</head>
-<body onclick= "clickFunc()" style="background-color:lightblue;">
-
-<h1 style="color:white;" id="demo"></h1>
-
-
-	
-<canvas id="myCanvas" onload = 'move()' onmousedown="mouseDown()" onmouseup="mouseUp()" onclick = "clickfunc()" onmousemove="showCoords(event)" onkeydown="uniKeyCode(event)" oncontextmenu="return false" width="800" height="400" style=" padding-left: 0;
+<canvas id="myCanvas" onload = 'move()' onclick = "clickfunc()" width="800" height="400" style=" padding-left: 0;
     padding-right: 0;
     margin-left: auto;
     margin-right: auto;
@@ -28,49 +11,20 @@ html, body {
     display: block;border:3px solid white;">
 </canvas>
 
+</body>
 
 <script>
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+ctx.font = "16px Arial";
 
-var myVar = setInterval(move, 20);
-
-function clickFunc(){
-
-}
-
-
-
-var c = document.getElementById("myCanvas");
-   
-var ctx = c.getContext("2d");
-
-
-var xpos = 0;
-var ypos = 0;
-
-
-function showCoords(event) {
-  xpos = event.clientX;
-  ypos = event.clientY;
-  
-}
-
-function move() {
-
-//BG
-ctx.fillStyle = 'black';
-ctx.fillRect(0, 0, 800, 400);
-
-ctx.fillStyle = 'blue';
-ctx.fillRect(xpos - 220, ypos - 130, 40, 40);
-
-
-}//End of FUNCTION
-
-
-
-
+canvas.addEventListener("mousemove", function(e) { 
+    var cRect = canvas.getBoundingClientRect();              // Gets the CSS positions along with width/height
+    var canvasX = Math.round(e.clientX - cRect.left);        // Subtract the 'left' of the canvas from the X/Y
+    var canvasY = Math.round(e.clientY - cRect.top);         // positions to get make (0,0) the top left of the 
+    ctx.clearRect(0, 0, canvas.width, canvas.height);        // canvas
+    ctx.fillText("X: "+canvasX+", Y: "+canvasY, 10, 20);
+});
 </script>
 
-</body>
-</html>
-
+</html> 
