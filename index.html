@@ -3,6 +3,7 @@
 <body style="background-color:lightblue;">
 
 <img id="scope" width="0" height="0" style="visibility:hidden" src="scope.png">
+<img id="city" width="0" height="0" style="visibility:hidden" src="city.png">
 
 <canvas id="myCanvas" onload = 'move()' width="800" height="400" style=" padding-left: 0;
     padding-right: 0;
@@ -34,8 +35,8 @@ var myVar = setInterval(move, 20);
 function move() {
 
 //BG
-ctx.fillStyle = 'blue';
-ctx.fillRect(0, 0, 800, 400);
+ctx.drawImage(city,0,0, 800, 400);
+
 
 ctx.drawImage(scope, canvasX - 400, canvasY - 200, 800, 400);
 
