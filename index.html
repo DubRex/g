@@ -2,12 +2,16 @@
 
 <body style="background-color:lightblue;">
 
-<img id="scope" width="0" height="0" style="visibility:hidden" src="scope.png">
-<img id="city" width="0" height="0" style="visibility:hidden" src="city.png">
+<img id="sunnydark" width="0" height="0" style="visibility:hidden" src="sunnydark.png">
+<img id="deaglehands" width="0" height="0" style="visibility:hidden" src="deaglehands.png">
+<img id="deaglehandsNEW" width="0" height="0" style="visibility:hidden" src="deaglehandsNEW.png">
 
-<canvas id="myCanvas" onload = 'move()' width="800" height="400" style=" padding-left: 0;
+<img id="charge1" width="0" height="0" style="visibility:hidden" src="charge1.png">
+
+
+<canvas id="myCanvas" onload = 'move()' onclick = "clickfunc()" width="800" height="400" style=" padding-left: 0;
     padding-right: 0;
-	cursor:none;
+	cursor: none; 
     margin-left: auto;
     margin-right: auto;
 	margin-top: 100px;
@@ -31,28 +35,41 @@ canvas.addEventListener("mousemove", function(e) {
 
 var myVar = setInterval(move, 20);
 
+var fire = 0; 
+var fireTimer = 0; 
+
+var ammo = 6; 
+
+function clickfunc(){
+if (fire == 0){
+ammo = ammo - 1;}
+fire = 1; 
+
+}
 
 function move() {
 
 //BG
-ctx.drawImage(city,0,0, 800, 400);
+ctx.drawImage(sunnydark,0,0, 800, 400);
 
+//Cursor
+ctx.fillStyle = "red";
+ctx.fillRect(canvasX - 100,210, 5, 5);
 
-ctx.drawImage(scope, canvasX - 400, canvasY - 200, 800, 400);
+if (fire == 0){ctx.drawImage(deaglehandsNEW,canvasX - 500,0, 800, 400);}
 
-ctx.fillStyle = 'black';
+if (fire == 1){ctx.drawImage(charge1,canvasX - 500,0, 800, 400); fireTimer++;}
 
-ctx.fillRect(canvasX - 800, canvasY - 200, 400, 400);
-ctx.fillRect(canvasX + 200, canvasY - 200, 1000, 400);
-
-ctx.fillRect(canvasX -1000, canvasY + 200, 2000, 1000);
-ctx.fillRect(canvasX -1000, canvasY - 400, 2000, 200);
+if (fireTimer > 10){fire = 0; fireTimer = 0;}
 
 
 ctx.fillStyle = "white";
-ctx.fillText("X: "+canvasX+", Y: "+canvasY, 10, 20);
+//ctx.fillText("X: "+canvasX+", Y: "+canvasY, 10, 20);
 
-
+ctx.font = "30px Arial";
+if (ammo > 0){ctx.fillStyle = "white";}
+else{ctx.fillStyle = "red";}
+ctx.fillText("( " + ammo + " / 6)", 10, 380);
 
 
 }//End of FUNCTION
