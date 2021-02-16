@@ -61,7 +61,7 @@ var myVar = setInterval(move, 20);
 var fire = 0; 
 var fireTimer = 0; 
 
-var ammo = 6; 
+var ammo = 7; 
 
 var reload = 0; 
 
@@ -107,9 +107,11 @@ ctx.fillStyle = "white";
 //ctx.fillText("RELOAD: " + reload + " FIRE: " + fire + " TIMER: " +  reloadTimer, 10, 20);
 
 ctx.font = "30px Arial";
-if (ammo > 0){ctx.fillStyle = "white";}
+if (ammo > 1){ctx.fillStyle = "white";}
 else{ctx.fillStyle = "red";}
-ctx.fillText("( " + ammo + " / 6)", 10, 380);
+if (reload == 0){ctx.fillText("( " + (ammo - 1) + " / 6)", 10, 380);}
+if (reload == 1){ctx.fillText("RELOADING", 10, 380);}
+
 
 if (ammo < 1){reload = 1;}
 
@@ -128,7 +130,7 @@ if (reload == 1){
 	else if (reloadTimer < 22){ctx.drawImage(re12,canvasX - 500,0, 800, 400);}
 	else if (reloadTimer < 24){ctx.drawImage(re13,canvasX - 500,0, 800, 400);}
 	else if (reloadTimer < 26){ctx.drawImage(re14,canvasX - 500,0, 800, 400);}
-	else if (reloadTimer < 28){ctx.drawImage(deaglehandsNEW,canvasX - 500,0, 800, 400); reloadTimer = 0; fire = 0; reload = 0; ammo = 6;}
+	else if (reloadTimer < 28){ctx.drawImage(deaglehandsNEW,canvasX - 500,0, 800, 400); reloadTimer = 0; fire = 0; reload = 0; ammo = 7;}
 }
 
 
