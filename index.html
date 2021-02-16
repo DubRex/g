@@ -14,6 +14,15 @@
 <img id="r5" width="0" height="0" style="visibility:hidden" src="r5.png">
 <img id="r6" width="0" height="0" style="visibility:hidden" src="r6.png">
 
+<img id="s1" width="0" height="0" style="visibility:hidden" src="s1.png">
+<img id="s2" width="0" height="0" style="visibility:hidden" src="s2.png">
+<img id="s3" width="0" height="0" style="visibility:hidden" src="s3.png">
+<img id="s4" width="0" height="0" style="visibility:hidden" src="s4.png">
+<img id="s5" width="0" height="0" style="visibility:hidden" src="s5.png">
+<img id="s6" width="0" height="0" style="visibility:hidden" src="s6.png">
+<img id="s7" width="0" height="0" style="visibility:hidden" src="s7.png">
+<img id="s8" width="0" height="0" style="visibility:hidden" src="s8.png">
+
 
 <canvas id="myCanvas" onload = 'move()' onclick = "clickfunc()" width="800" height="400" style=" padding-left: 0;
     padding-right: 0;
@@ -69,9 +78,21 @@ ctx.fillRect(canvasX - 100,210, 5, 5);
 if (fire == 0 && reload == 0){ctx.drawImage(deaglehandsNEW,canvasX - 500,0, 800, 400);}
 
 
-if (fire == 1 && reload == 0){ctx.drawImage(charge1,canvasX - 500,0, 800, 400); fireTimer++;}
+if (fire == 1 && reload == 0){
+fireTimer++;
 
-if (fireTimer > 10){fire = 0; fireTimer = 0;}
+if (fireTimer < 2){ctx.drawImage(s1,canvasX - 500,0, 800, 400);}
+else if (fireTimer < 4){ctx.drawImage(s2,canvasX - 500,0, 800, 400);}
+else if (fireTimer < 6){ctx.drawImage(s3,canvasX - 500,0, 800, 400);}
+else if (fireTimer < 8){ctx.drawImage(s4,canvasX - 500,0, 800, 400);}
+else if (fireTimer < 10){ctx.drawImage(s5,canvasX - 500,0, 800, 400);}
+else if (fireTimer < 12){ctx.drawImage(s6,canvasX - 500,0, 800, 400);}
+else if (fireTimer < 14){ctx.drawImage(s7,canvasX - 500,0, 800, 400);}
+else if (fireTimer <= 16){ctx.drawImage(s8,canvasX - 500,0, 800, 400);}
+
+}
+
+if (fireTimer > 16){ctx.drawImage(s8,canvasX - 500,0, 800, 400); fire = 0; fireTimer = 0;}
 
 
 ctx.fillStyle = "white";
