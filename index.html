@@ -43,10 +43,22 @@
 
 </body>
 
+<audio id="myAudio">
+  <source src="fire.mp3" type="audio/mp3">
+</audio>
+
+<audio id="myAudio2">
+  <source src="reloadsound.mp3" type="audio/mp3">
+</audio>
+
 <script>
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 ctx.font = "16px Arial";
+
+var firesound = document.getElementById("myAudio"); 
+
+var reloadsounds = document.getElementById("myAudio2"); 
 
 var canvasX = 0; 
 var canvasY = 0; 
@@ -67,10 +79,24 @@ var reload = 0;
 
 var reloadTimer = 0;
 
+function playAudio() { 
+  x.play(); 
+} 
+
+function pauseAudio() { 
+  x.pause(); 
+} 
+
 function clickfunc(){
+
+
 if (fire == 0 && reload == 0){ammo = ammo - 1;}
 
+if (fire == 0 && reload == 0 && ammo > 0){firesound.currentTime = 0; firesound.play();}
+
 if (reload == 0){fire = 1;}
+
+
 
 }
 
@@ -116,6 +142,7 @@ if (reload == 1){ctx.fillText("RELOADING", 10, 380);}
 if (ammo < 1){reload = 1;}
 
 if (reload == 1){
+reloadsounds.play();
     reloadTimer+=1;
 	if (reloadTimer < 2){ctx.drawImage(re2,canvasX - 500,0, 800, 400);}
 	else if (reloadTimer < 4){ctx.drawImage(re3,canvasX - 500,0, 800, 400);}
