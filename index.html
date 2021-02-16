@@ -8,11 +8,19 @@
 
 <img id="charge1" width="0" height="0" style="visibility:hidden" src="charge1.png">
 
-<img id="r2" width="0" height="0" style="visibility:hidden" src="r2.png">
-<img id="r3" width="0" height="0" style="visibility:hidden" src="r3.png">
-<img id="r4" width="0" height="0" style="visibility:hidden" src="r4.png">
-<img id="r5" width="0" height="0" style="visibility:hidden" src="r5.png">
-<img id="r6" width="0" height="0" style="visibility:hidden" src="r6.png">
+<img id="re2" width="0" height="0" style="visibility:hidden" src="re2.png">
+<img id="re3" width="0" height="0" style="visibility:hidden" src="re3.png">
+<img id="re4" width="0" height="0" style="visibility:hidden" src="re4.png">
+<img id="re5" width="0" height="0" style="visibility:hidden" src="re5.png">
+<img id="re6" width="0" height="0" style="visibility:hidden" src="re6.png">
+<img id="re7" width="0" height="0" style="visibility:hidden" src="re7.png">
+<img id="re8" width="0" height="0" style="visibility:hidden" src="re8.png">
+<img id="re9" width="0" height="0" style="visibility:hidden" src="re9.png">
+<img id="re10" width="0" height="0" style="visibility:hidden" src="re10.png">
+<img id="re11" width="0" height="0" style="visibility:hidden" src="re11.png">
+<img id="re12" width="0" height="0" style="visibility:hidden" src="re12.png">
+<img id="re13" width="0" height="0" style="visibility:hidden" src="re13.png">
+<img id="re14" width="0" height="0" style="visibility:hidden" src="re14.png">
 
 <img id="s1" width="0" height="0" style="visibility:hidden" src="s1.png">
 <img id="s2" width="0" height="0" style="visibility:hidden" src="s2.png">
@@ -96,7 +104,7 @@ if (fireTimer > 16){ctx.drawImage(s8,canvasX - 500,0, 800, 400); fire = 0; fireT
 
 
 ctx.fillStyle = "white";
-ctx.fillText("RELOAD: " + reload + " FIRE: " + fire + " TIMER: " +  reloadTimer, 10, 20);
+//ctx.fillText("RELOAD: " + reload + " FIRE: " + fire + " TIMER: " +  reloadTimer, 10, 20);
 
 ctx.font = "30px Arial";
 if (ammo > 0){ctx.fillStyle = "white";}
@@ -106,13 +114,21 @@ ctx.fillText("( " + ammo + " / 6)", 10, 380);
 if (ammo < 1){reload = 1;}
 
 if (reload == 1){
-    reloadTimer++;
-	console.log(reloadTimer);
-	if (reloadTimer < 5){ctx.drawImage(r2,canvasX - 500,0, 800, 400);}
-	else if (reloadTimer < 10){ctx.drawImage(r4,canvasX - 500,0, 800, 400);}
-	else if (reloadTimer < 15){ctx.drawImage(r5,canvasX - 500,0, 800, 400);}
-	else if (reloadTimer < 20){ctx.drawImage(r6,canvasX - 500,0, 800, 400);}
-	else if (reloadTimer < 25){ctx.drawImage(deaglehandsNEW,canvasX - 500,0, 800, 400); reloadTimer = 0; fire = 0; reload = 0; ammo = 6;}
+    reloadTimer+=1;
+	if (reloadTimer < 2){ctx.drawImage(re2,canvasX - 500,0, 800, 400);}
+	else if (reloadTimer < 4){ctx.drawImage(re3,canvasX - 500,0, 800, 400);}
+	else if (reloadTimer < 6){ctx.drawImage(re4,canvasX - 500,0, 800, 400);}
+	else if (reloadTimer < 8){ctx.drawImage(re5,canvasX - 500,0, 800, 400);}
+	else if (reloadTimer < 10){ctx.drawImage(re6,canvasX - 500,0, 800, 400);}
+	else if (reloadTimer < 12){ctx.drawImage(re7,canvasX - 500,0, 800, 400);}
+	else if (reloadTimer < 14){ctx.drawImage(re8,canvasX - 500,0, 800, 400);}
+	else if (reloadTimer < 16){ctx.drawImage(re9,canvasX - 500,0, 800, 400);}
+	else if (reloadTimer < 18){ctx.drawImage(re10,canvasX - 500,0, 800, 400);}
+	else if (reloadTimer < 20){ctx.drawImage(re11,canvasX - 500,0, 800, 400);}
+	else if (reloadTimer < 22){ctx.drawImage(re12,canvasX - 500,0, 800, 400);}
+	else if (reloadTimer < 24){ctx.drawImage(re13,canvasX - 500,0, 800, 400);}
+	else if (reloadTimer < 26){ctx.drawImage(re14,canvasX - 500,0, 800, 400);}
+	else if (reloadTimer < 28){ctx.drawImage(deaglehandsNEW,canvasX - 500,0, 800, 400); reloadTimer = 0; fire = 0; reload = 0; ammo = 6;}
 }
 
 
