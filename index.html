@@ -118,6 +118,10 @@ if (reload == 0){fire = 1;}
 
 }
 
+var d = new Date();
+var n = 0;
+
+var swayFac = 0.1; 
 function move() {
 
 //BG
@@ -127,7 +131,11 @@ ctx.drawImage(sunnydark,0,0, 800, 400);
 ctx.fillStyle = "red";
 ctx.fillRect(canvasX - 100,210, 5, 5);
 
-if (fire == 0 && reload == 0){ctx.drawImage(deaglehandsNEW,canvasX - 500,0, 800, 400);}
+n = n + swayFac;
+
+if (ammo == 1){swayFac = 0.3;}
+else{swayFac = 0.1;}
+if (fire == 0 && reload == 0){ctx.drawImage(deaglehandsNEW,canvasX - 500 + Math.cos(n)*3,Math.cos(n)*2, 800, 400);}
 
 
 if (fire == 1 && reload == 0){
