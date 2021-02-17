@@ -115,18 +115,18 @@ if (fire == 0 && reload == 0){ctx.drawImage(deaglehandsNEW,canvasX - 500,0, 800,
 if (fire == 1 && reload == 0){
 fireTimer++;
 
-if (fireTimer < 2){ctx.drawImage(s1,canvasX - 500,0, 800, 400);}
-else if (fireTimer < 4){ctx.drawImage(s2,canvasX - 500,0, 800, 400);}
-else if (fireTimer < 6){ctx.drawImage(s3,canvasX - 500,0, 800, 400);}
-else if (fireTimer < 8){ctx.drawImage(s4,canvasX - 500,0, 800, 400);}
-else if (fireTimer < 10){ctx.drawImage(s5,canvasX - 500,0, 800, 400);}
-else if (fireTimer < 12){ctx.drawImage(s6,canvasX - 500,0, 800, 400);}
-else if (fireTimer < 14){ctx.drawImage(s7,canvasX - 500,0, 800, 400);}
-else if (fireTimer <= 16){ctx.drawImage(s8,canvasX - 500,0, 800, 400);}
+if (fireTimer < 1){ctx.drawImage(s1,canvasX - 500,0, 800, 400);}
+else if (fireTimer < 2){ctx.drawImage(s2,canvasX - 500,0, 800, 400);}
+else if (fireTimer < 3){ctx.drawImage(s3,canvasX - 500,0, 800, 400);}
+else if (fireTimer < 4){ctx.drawImage(s4,canvasX - 500,0, 800, 400);}
+else if (fireTimer < 6){ctx.drawImage(s5,canvasX - 500,0, 800, 400);}
+else if (fireTimer < 8){ctx.drawImage(s6,canvasX - 500,0, 800, 400);}
+else if (fireTimer < 10){ctx.drawImage(s7,canvasX - 500,0, 800, 400);}
+else if (fireTimer <= 12){ctx.drawImage(s8,canvasX - 500,0, 800, 400);}
 
 }
 
-if (fireTimer > 16){ctx.drawImage(s8,canvasX - 500,0, 800, 400); fire = 0; fireTimer = 0;}
+if (fireTimer > 12){ctx.drawImage(s8,canvasX - 500,0, 800, 400); fire = 0; fireTimer = 0;}
 
 
 ctx.fillStyle = "white";
